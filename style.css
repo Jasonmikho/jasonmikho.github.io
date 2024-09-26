@@ -493,12 +493,39 @@ html {
     .header-content {
         flex-direction: column-reverse;
         align-items: center;
+        padding: 10px 20px;
+    }
+
+    header .profile img {
+        width: 150px;  /* Reduce size on mobile */
+        height: 150px;
     }
 
     header h1 {
         margin-top: 10px;
         text-align: center;
-        align-self: center; /* Center the name on small screens */
-        padding-bottom: 0; /* Remove bottom padding on small screens */
+        align-self: center;
+        padding-bottom: 0;
+        font-size: 2em;  /* Reduce font size on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;  /* Show hamburger icon on mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;  /* Hide hamburger icon on desktop */
     }
 }

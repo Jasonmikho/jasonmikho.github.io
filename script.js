@@ -55,8 +55,30 @@ document.querySelectorAll('.contact-buttons .btn').forEach(button => {
 });
 
 // Add hamburger menu toggle functionality
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('nav').classList.toggle('active');
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', function() {
+    nav.classList.toggle('active');
+});
+
+// Add functionality to close menu when an item is selected
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {  // Only on mobile
+            nav.classList.remove('active');
+        }
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const isClickInsideNav = nav.contains(event.target);
+    const isClickOnMenuToggle = menuToggle.contains(event.target);
+    
+    if (!isClickInsideNav && !isClickOnMenuToggle && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+    }
 });
 
 // Scroll Animation
