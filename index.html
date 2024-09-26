@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Mikho - About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+    <header>
+        <div class="profile">
+            <img src="src/profilePic.jpg" alt="Jason Mikho">
+            <h1>Jason Mikho</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Technical Skills</a></li>
+                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+    <div class="container">
+        <section id="introduction" class="animate-on-scroll">
+            <h2><i class="fas fa-user"></i> Introduction</h2>
+            <p>Hello! I'm Jason Mikho, a passionate software developer with a keen interest in technology and innovation. I love creating solutions that make a difference and continuously learning new skills to improve my craft.</p>
+        </section>
+        <section id="education" class="animate-on-scroll">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <p>I am currently pursuing a BSc in Computer and Electrical Engineering at Oakland University, Rochester, MI, with an expected graduation date of April 2025. My GPA is 3.5/4.0.</p>
+            <img id="education-image" src="https://masoncontractors.azurewebsites.net/Public/Images/2020/05/22645_N136.jpg" alt="Education Image">
+        </section>
+        <section id="skills" class="animate-on-scroll">
+            <h2><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+            <p>My technical skills include programming languages such as C, C#, C++, JavaScript, TypeScript, HTML, CSS, Python, and VHDL. I am also proficient in software applications like Visual Studio Code, Notepad++, Matlab, Vivado, PSpice, CATIA, and Terminal.</p>
+            <div class="skills-images">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBpPDICw3BeHITTIIYqOg23RI_dZQdoMfPQ&s" alt="C++ Logo">
+                <img src="https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png" alt="JavaScript Logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1z0LC70CF3lPE1Xe-Uka4Y5sSlLzrAVHCQg&s" alt="Python Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/768px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code Logo">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-powershell-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-2945093.png" alt="PowerShell Logo">
+            </div>
+        </section>
+        <section id="experience" class="animate-on-scroll">
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            <p>As a Software Development Intern at Conversa Solutions, I created new automated tests using Cucumber with JavaScript and TypeScript, increasing test coverage and identifying over 50 previously undetected bugs. I also redesigned the test framework to support multiple user types and profiles.</p>
+            <p>At Oakland University, I work as a Math Department Undergraduate Learning Assistant, assisting professors with grading and coordinating efforts for homework and quizzes.</p>
+            <p>During my internship at Brose North America, I supported development in software applications utilizing XCP communication on UDP sockets and created a Python executable to assist image matching for radar testing, boosting accuracy by 15%.</p>
+            <div class="work-images">
+                <img src="https://www.conversasolutions.com/wp-content/uploads/2023/10/Conversa_VTX_Flat-no-vtxBLK.png" alt="Conversa Logo">
+                <img src="https://www.hfcc.edu/sites/hfcmain/files/photos/2021/ou-logo.jpg" alt="Oakland University Logo">
+                <img src="https://www.brose.com/de/media/technical/layout/logo/20210413-brose-logo--open-graph--brose_excellence_in_mechatronics_4c__opengraph.jpg" alt="Brose Logo">
+            </div>
+        </section>
+        <section id="projects" class="animate-on-scroll">
+            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+            <p>One of my notable projects is the Liquid Dispenser Project, where | designed and implemented an automatic liquid dispenser using Arduino, optimizing for precise volume control. I also developed a VHDL-based real-time LED streetlight simulation circuit using Vivado, which included a finite state machine for seamless transitions.</p>
+            <div class="project-images">
+                <div class="project-image-container">
+                    <img src="src/waterDispenser.jpeg" alt="Water Dispenser Project" data-video="src/waterDispenser.mp4">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="project-image-container">
+                    <img src="src/trafficLightSim.png" alt="Traffic Light Simulation Project" data-video="src/trafficLightSim.mp4">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+            
+            <!-- Modal for Video -->
+            <div id="videoModal" class="modal">
+                <span class="close">&times;</span>
+                <iframe id="videoPlayer" width="700" height="650" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <section id="contact" class="animate-on-scroll">
+            <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+            <p>I'm always open to new opportunities and connections. Feel free to reach out!</p>
+            <div class="contact-buttons">
+                <a href="https://www.linkedin.com/in/jason-mikho-9a1813256/" target="_blank" class="btn linkedin-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:jasonmikho@oakland.edu" class="btn email-btn">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
