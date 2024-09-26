@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #77aaff;
+    --primary-color: #D3D3D3;
     --accent-color: #0056b3;
     --background-color: #808080;
     --text-color: #333;
@@ -26,33 +26,65 @@ header {
     background: var(--background-color);
     color: #fff;
     padding: 20px 0;
-    text-align: center;
-    border-bottom: #77aaff 3px solid;
+    border-bottom: #D3D3D3 3px solid;
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
 }
 
-header .profile {
+.header-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header .profile img {
-    border-radius: 50%;
-    width: 150px;
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
+    justify-content: flex-end;
+    align-items: flex-end; /* This aligns items to the bottom */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px; /* Space between the name and image */
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    color: var(--primary-color);
+    color: var(--text-color);
     transition: all 0.3s ease;
+    text-shadow: 2px 2px 0px var(--primary-color),
+                 4px 4px 0px rgba(0,0,0,0.1);
+    letter-spacing: 2px;
+    font-weight: bold;
+    order: 1; /* Keeps the name on the left */
+    align-self: flex-end; /* Aligns the name to the bottom */
+    padding-bottom: 10px; /* Adjusts the name slightly above the bottom edge of the image */
+}
+
+header .profile {
+    flex-shrink: 0;
+    order: 2; /* Keeps the image on the right */
+}
+
+header .profile img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Adjust sticky header styles */
+header.sticky .header-content {
+    padding: 10px 20px;
+}
+
+header.sticky h1 {
+    font-size: 1.8em;
+    text-shadow: 1px 1px 0px var(--primary-color),
+                 2px 2px 0px rgba(0,0,0,0.1);
+    padding-bottom: 5px; /* Reduce padding for sticky header */
+}
+
+header.sticky .profile img {
+    width: 100px;
+    height: 100px;
 }
 
 header p {
@@ -60,26 +92,6 @@ header p {
     font-size: 1.2em;
     color: #ccc;
     transition: all 0.3s ease;
-}
-
-header.sticky {
-    padding: 10px 0;
-}
-
-header.sticky .profile img {
-    width: 80px;
-}
-
-header.sticky h1 {
-    font-size: 1.8em;
-}
-
-header.sticky p {
-    font-size: 1em;
-}
-
-header.sticky nav {
-    margin-top: 10px;
 }
 
 nav {
@@ -474,4 +486,19 @@ html {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    header h1 {
+        margin-top: 10px;
+        text-align: center;
+        align-self: center; /* Center the name on small screens */
+        padding-bottom: 0; /* Remove bottom padding on small screens */
+    }
 }
